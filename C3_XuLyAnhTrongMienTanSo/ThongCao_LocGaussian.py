@@ -15,7 +15,7 @@ v[idy] = v[idy] - N
 
 D0 = 25
 D = np.sqrt(U**2 + V**2)
-H = 1 - np.exp(-(D**2)/(2*(D0**2)))
+H = 1 - np.exp(-(D**2)/(2*(D0**2))).astype(float)
 G = H * F
 imgOut = np.real(np.fft.ifft2(G))
 

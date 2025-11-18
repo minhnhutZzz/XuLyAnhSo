@@ -15,8 +15,8 @@ idy = (v > N/2)
 v[idy] = v[idy] - N
 [V,U] = np.meshgrid(v,u)
 
-D = np.sqrt(np.power(U, 2) + np.power(V, 2))
-H = ((D <= C0 - W/2) | (D >= C0 + W/2)).astype(float)
+D = np.sqrt(U**2 + V**2)
+H = 1- ((D >= (C0 - W/2)) & (D <= (C0 + W/2))).astype(float)
 G = H * F
 imgOut = np.real(np.fft.ifft2(G))
 fig = plt.figure(dpi = 300)
@@ -33,10 +33,10 @@ plt.title("Kernel H", fontsize=3)
 plt.subplot(2,2,3)
 plt.imshow(imgOut, cmap="gray")
 plt.axis("off")
-plt.title("Ideal BandPass", fontsize=3)
+plt.title("Ideal BandStop Ly Tuong", fontsize=3)
 
 plt.subplot(2,2,4)
 plt.imshow(np.abs(imgOut), cmap="gray")
 plt.axis("off")
-plt.title("Ideal BandPass (abs)", fontsize=3)
+plt.title("Ideal BandStop Ly Tuong (abs)", fontsize=3)
 plt.show()

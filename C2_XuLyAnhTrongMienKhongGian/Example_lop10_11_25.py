@@ -107,7 +107,7 @@ class ImageProcessorGUI:
                                relief='flat', bd=0, padx=15, pady=10,
                                activebackground=self.blue_dark, activeforeground='white',
                                cursor='hand2', highlightthickness=0)
-        btn_choose.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 3))
+        btn_choose.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 3))      
         
         # Nút Apply
         btn_apply = tk.Button(buttons_frame, text="✅ Apply", command=self.apply_to_original,
